@@ -7,7 +7,7 @@
 #include "linked_list.h"
 #include "thread_pool.h"
 #include "platform/context.h"
-#include "stdext/optional.h"
+#include <optional.h>
 
 namespace ebb {
 
@@ -24,7 +24,7 @@ class FiberConditionVariable {
 
   // The internal condition variable will only be initialized if it is needed,
   // which occurs when a non-thread pool thread waits on this.
-  stdext::optional<std::condition_variable> internal_cond_;
+  std::optional<std::condition_variable> internal_cond_;
 
   ThreadPool::ContextList wait_queue_;
 };
