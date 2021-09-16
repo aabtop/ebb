@@ -116,14 +116,6 @@ class ThreadPool {
   // if they are idle.
   ContextList idle_queue_;
 
-  // Interesting statistics about how many contexts exist in parallel.
-
-  // The high water mark for number of simultaneous contexts existing at one
-  // time.
-  int num_simultaneous_hwm_ = 0;
-  // The number of contexts that exist at any given time.
-  int num_contexts_ = 0;
-
   friend class FiberConditionVariable;
 };
 

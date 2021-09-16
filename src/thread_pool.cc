@@ -87,13 +87,7 @@ platform::Context* ThreadPool::RunLoop(RunLoopPolicy policy) {
     Task* task = DequeueReadyTask();
 
     if (task) {
-      num_contexts_ += 1;
-      num_simultaneous_hwm_ = num_contexts_ > num_simultaneous_hwm_ ?
-                                  num_contexts_ : num_simultaneous_hwm_;
-
       task->function_();
-
-      num_contexts_ -= 1;
     } else {
       if (quit_) {
         // All fibers should have been cleaned up by now.
