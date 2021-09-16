@@ -3,11 +3,11 @@
 
 #include <condition_variable>
 #include <mutex>
+#include <optional>
 
 #include "linked_list.h"
-#include "thread_pool.h"
 #include "platform/context.h"
-#include <optional.h>
+#include "thread_pool.h"
 
 namespace ebb {
 
